@@ -48,7 +48,7 @@ function startCountdown() {
     const now = new Date();
     const timeDifference = selectedDate - now;
 
-    // se verifica daca timpul ramas este 0 sau
+    // se verifica daca timpul ramas este 0 sau mai mic ca 0
     if (timeDifference <= 0) {
       clearInterval(countdownInterval);
       updateTimer(0, 0, 0, 0);

@@ -1,8 +1,11 @@
 import Notiflix from 'notiflix';
 
-// adaugare eveniment pe butonul "Create promises" si preluare date din formular (ca numar)
+// adaugare eveniment pe butonul "Create promises"
 const form = document.querySelector('.form');
-form.addEventListener('submit', function (event) {
+form.addEventListener('submit', handelSubmit);
+
+// functia de gestionare a evenimentului de submit
+function handelSubmit(event) {
   event.preventDefault();
 
   const delay = Number(event.target.delay.value);
@@ -23,7 +26,7 @@ form.addEventListener('submit', function (event) {
         );
       });
   }
-});
+}
 
 // declarare functie de creare promis-uri
 function createPromise(position, delay) {

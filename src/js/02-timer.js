@@ -35,19 +35,19 @@ const options = {
 flatpickr('#datetime-picker', options);
 
 // adaugare eveniment pe butonul de start, porneste cronometrul invers
-startButton.addEventListener('click', () => {
+startButton.addEventListener('click', handleStartButonClick);
+
+function handleStartButonClick() {
   startCountdown();
-});
+}
 
 // sterge intervalul anterior atunci cand se seteaza un nou interval
 function startCountdown() {
   clearInterval(countdownInterval);
-
   // actualizare cronometru la fiecare secunda
   countdownInterval = setInterval(() => {
     const now = new Date();
     const timeDifference = selectedDate - now;
-
     // se verifica daca timpul ramas este 0 sau mai mic ca 0
     if (timeDifference <= 0) {
       clearInterval(countdownInterval);

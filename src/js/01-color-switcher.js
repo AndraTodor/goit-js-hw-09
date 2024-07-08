@@ -8,14 +8,17 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-startBtn.addEventListener('click', () => {
+function startColorSwitching() {
   startBtn.disabled = true;
   colorInterval = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-});
+}
 
-stopBtn.addEventListener('click', () => {
+function stopColorSwitching() {
   clearInterval(colorInterval);
   startBtn.disabled = false;
-});
+}
+
+startBtn.addEventListener('click', startColorSwitching);
+stopBtn.addEventListener('click', stopColorSwitching);
